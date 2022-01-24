@@ -1,0 +1,27 @@
+.container {
+    width: 70%;
+    margin: auto;
+    margin-top: 200px;
+    background-color: #f2f2f2;
+
+    text-align: center;
+    padding: 0px;
+    color: rgb(230, 67, 67);
+    border: 1px solid rgb(230, 67, 67);
+    border-radius: 30px;
+}
+
+.container h1 {
+    font-size: 100px;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px;
+}
+
+.container p {
+    color: black;
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px;
+}

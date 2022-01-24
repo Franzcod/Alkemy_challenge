@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;1,700&family=Roboto+Slab:wght@400;700&display=swap');
+
+.Nav {
+    padding-left: 1rem;
+    display: flex;
+    /* background-color: pink; */
+    width: fit-content;
+    align-items: center;
+}
+
+.links {
+    font-size: calc(1vh + .6em);
+    margin-right: 1rem;
+    color: rgba(0, 0, 0, 0.637);
+    text-decoration: none;
+    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial;
+}
+
+.links:hover {
+    font-size: calc(1vw + .6em);
+    font-weight: bold;
+    border-bottom: 3px solid rgb(71, 202, 130);
+}

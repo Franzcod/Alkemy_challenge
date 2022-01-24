@@ -1,0 +1,17 @@
+.botonSinFondo {
+    background-Color: transparent;
+    font-size: calc(1vw + .5em);
+    margin-right: 1rem;
+    padding: 0.5rem;
+    border: none;
+}
+
+.botonConFondo {
+    background-Color: rgb(71, 202, 130);
+    font-size: calc(1vw + .5em);
+    margin-right: 1rem;
+    padding: 0 0.5rem;
+    color: #fff;
+    border: none;
+    border-radius: 0.3rem;
+}

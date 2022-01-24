@@ -1,0 +1,222 @@
+:root {
+    --size-letra: calc(.8vw + .8em);
+}
+
+/* --size-letra; */
+
+.boxCont {
+    width: 75%;
+    height: 100%;
+    min-width: 390px;
+    max-width: 800px;
+    margin: 30px auto;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 1px 15px -1px rgba(0, 0, 0, 0.59);
+    padding: 10px 30px;
+    overflow: hidden;
+    /* font-size: --size-letra; */
+}
+
+
+.cuenta_estado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom: 10px; */
+    /* font-size: --size-letra; */
+    /* height: fit-content; */
+}
+
+.cuenta_estado p {
+    font-size: --size-letra;
+}
+
+.cuenta_estado .estadoPendiente {
+    /* font-size: 1.2rem; */
+    font-weight: bold;
+    /* color: rgb(247, 151, 151); */
+    color: rgb(247, 151, 151);
+    font-size: 65px;
+    margin: 0;
+}
+
+.cuenta_estado .estadoFinalizado {
+    /* font-size: 1.2rem; */
+    font-weight: bold;
+    /* color: rgb(247, 151, 151); */
+    color: rgb(63, 184, 117);
+    font-size: 60px;
+}
+
+.iconoImgRest {
+    /* box-shadow: 21px 10px 5px red; */
+    background-color: rgb(247, 151, 151);
+    border-radius: 50%;
+    padding: 5px;
+    /* width: 100px; */
+}
+
+.iconoImgSum {
+    /* box-shadow: 21px 10px 5px red; */
+    background-color: rgb(63, 184, 117);
+    border-radius: 50%;
+    padding: 5px;
+    /* width: 100px; */
+}
+
+.monto_partes_boton {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px;
+    /* background-color: yellow; */
+    height: 65px;
+}
+
+
+.contMonto {
+    width: fit-content;
+    height: 100%;
+    /* margin: 10px; */
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    /* margin-bottom: 10px; */
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    /* font-size: --size-letra; */
+}
+
+.contMonto p {
+    font-size: --size-letra;
+    margin: 0px 8px;
+}
+
+.plata {
+    font-weight: bold;
+}
+
+.partesCont {
+    /* background-color: aquamarine; */
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid #ccc;
+    padding: 8px;
+    border-radius: 5px;
+    /* align-items: center; */
+    /* text-align: center; */
+    width: fit-content;
+    height: 100%;
+}
+
+.partes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    /*  */
+}
+
+.debe {
+    margin: 0 10px;
+}
+
+.parte1 p,
+.parte2 p {
+    font-weight: bold;
+    font-size: --size-letra;
+}
+
+
+
+.partesCont .partes {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+.concepto {
+    font-weight: bold;
+    color: rgb(122, 118, 116);
+}
+
+
+.contBotones {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+    /* background-color: aquamarine; */
+}
+
+
+.boton {
+    background-Color: rgb(71, 202, 130);
+    font-size: --size-letra;
+    margin-right: 1rem;
+    padding: 0 0.5rem;
+    color: #fff;
+    border: none;
+    border-radius: 0.3rem;
+    height: 90%;
+}
+
+
+.concepto_limite_cuota {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+.concepto_limite_cuota p {
+    font-size: --size-letra;
+}
+
+
+
+
+@media (max-width: 850px) {
+
+    .boxCont {
+        width: 90%;
+        padding: 10px;
+        /* margin: 10px; */
+    }
+
+    .monto_partes_boton {
+        height: 80px;
+    }
+
+    .partesCont {
+        width: max-content;
+
+    }
+
+    .partes {
+        flex-direction: column;
+        /* padding: 10px; */
+    }
+
+    .contMonto {
+        justify-content: space-around;
+    }
+
+    .contBotones {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}
+
+@media (min-width: 850px) {
+    :root {
+        --size-letra: calc(2vw + .8em);
+    }
+}

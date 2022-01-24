@@ -1,0 +1,83 @@
+.ContenedorHeader {
+    max-width: 98%;
+    width: 98%;
+    height: auto;
+    max-height: 100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f2f2f23b;
+    /* flex-direction: column; */
+}
+
+
+.contLogoNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem;
+}
+
+.Logo {
+    color: rgb(71, 202, 130);
+    font-size: calc(1vw + 1.3em);
+    line-height: 0;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 1rem;
+}
+
+
+.ContBotons {
+
+    background-color: #f2f2f23b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+
+.ContBotons p {
+    color: rgba(0, 0, 0, 0.623);
+    text-decoration: none;
+    font-size: calc(.8vw + .2rem);
+    margin-right: 1rem;
+    padding: 0.1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.contInfo {
+    margin-right: 2rem;
+}
+
+@media screen and (max-width: 810px) {
+    .contInfo {
+        display: none;
+    }
+}
+
+
+.luzNeonOn {
+    /* font-size: calc(1vw + 1.3em); */
+    width: 5px;
+    height: 5px;
+    background-color: rgb(0, 255, 0);
+    /* font-size: 20px; */
+    border-radius: 50%;
+    /* -webkit-box-shadow: 0px 0px 15px 20px rgba(45, 255, 196, 0.9); */
+    /* -moz-box-shadow: 0px 0px 15px 20px rgba(45, 255, 196, 0.9); */
+    box-shadow: 0px 0px 15px 7px rgba(45, 255, 196, 0.9);
+}
+
+.luzNeonOff {
+    background-color: red;
+    /* font-size: calc(1vw + 1.3em); */
+    width: 5px;
+    height: 5px;
+    /* font-size: 20px; */
+    border-radius: 50%;
+    /* -webkit-box-shadow: 0px 0px 15px 20px rgba(45, 255, 196, 0.9); */
+    /* -moz-box-shadow: 0px 0px 15px 20px rgba(45, 255, 196, 0.9); */
+    box-shadow: 0px 0px 30px 15px rgb(243, 125, 121);
+}
