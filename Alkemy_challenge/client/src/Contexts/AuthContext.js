@@ -5,7 +5,9 @@ export const AuthContext = createContext();
 
 
 const initialState = {
-    user : null
+    user : null,
+    checking: true,
+    loggedIn: false,
 }
 
 
@@ -25,6 +27,8 @@ export const AuthProvider = ({children}) => {
             
             setAuth({
                 user : resp["User Data"],
+                checking: false,
+                loggedIn: true,
             });
             // console.log('Autenticado! > ', Auth)
             return true
@@ -42,6 +46,8 @@ export const AuthProvider = ({children}) => {
             
             setAuth({
                 user : usuario,
+                checking: false,
+                loggedIn: true,
             });;
             console.log('Autenticado! > ', Auth)
             return true
@@ -55,27 +61,36 @@ export const AuthProvider = ({children}) => {
         // Si el token no existe
         if(!token) {
             return setAuth({
-                user :null
+                user :null,
+                checking: false,
+                loggedIn: false,
             });
         }
 
         const resp = await fetchConToken('user/renew');
 
+
+
         if(resp["User Data"]) {
-            localStorage.setItem('token', resp.token);
+            // console.log('token renovado > ',resp["Token"])
+            localStorage.setItem('token', resp["Token"]);
 
            
             
             setAuth({
                 user : resp[
                     "User Data"
-                ]
+                ],
+                checking: false,
+                loggedIn: true,
             });
             console.log('Autenticado!')
             return true
         } else {
              setAuth({
-                user : null
+                user : null,
+                checking: false,
+                loggedIn: false,
             });
             return false;
         }
@@ -87,7 +102,9 @@ export const AuthProvider = ({children}) => {
     const logout = () => {
         localStorage.removeItem('token');
         setAuth({
-            user : null
+            user : null,
+            checking: false,
+            loggedIn: false,
         });
     }
 

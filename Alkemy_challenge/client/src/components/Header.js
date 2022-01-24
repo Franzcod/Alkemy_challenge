@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import Boton from './Ui/boton/Boton';
 import style from './header.module.css';
 
-import Navegation from './Navegation';
+// import Navegation from './Navegation';
 import {Link} from 'react-router-dom';
 
 import { AuthContext } from '../Contexts/AuthContext';

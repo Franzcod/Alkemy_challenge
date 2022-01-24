@@ -1,5 +1,5 @@
-import React, {createContext, useState, useCallback} from 'react';
-import {fetchConToken,  fetchSinToken } from '../helpers/fetch';
+import React, {createContext, useState} from 'react';
+import {fetchConToken } from '../helpers/fetch';
 
 export const DataContext = createContext();
 

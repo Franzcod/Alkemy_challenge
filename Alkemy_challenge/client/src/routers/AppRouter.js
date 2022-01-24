@@ -10,7 +10,7 @@ export const AppRouter = () => {
 
   const {Auth, verificarToken} = useContext(AuthContext);
 
-  // console.log('AppRouter Auth>> ',Auth)
+  console.log('AppRouter Auth>> ',Auth)
 
 
   useEffect(() => {
@@ -18,9 +18,9 @@ export const AppRouter = () => {
   } , [verificarToken]);
 
 
-  // if(Auth.user){
-  //   return <h1>Carganding...</h1>
-  // }
+  if(Auth.checking){
+    return <h1>Carganding...</h1>
+  }
 
 
 
@@ -29,11 +29,11 @@ export const AppRouter = () => {
       <Routes>
         <Route
           path="/auth/*"
-          element={<PublicRoute isAuthenticated={Auth.user ? true : false} />}
+          element={<PublicRoute isAuthenticated={Auth.loggedIn } />}
         />
         <Route
           path="/"
-          element={<PrivateRoute  isAuthenticated={Auth.user ? true : false}/>}
+          element={<PrivateRoute  isAuthenticated={Auth.loggedIn}/>}
         />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
