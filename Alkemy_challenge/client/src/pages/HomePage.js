@@ -42,7 +42,7 @@ const HomePage =  () => {
     return (
         <div className={style.container}>
             <Header/>
-            <Boton_add/>
+            <Boton_add data={Auth}/>
             <div className={style.contBoxs}>
                 
                 {
