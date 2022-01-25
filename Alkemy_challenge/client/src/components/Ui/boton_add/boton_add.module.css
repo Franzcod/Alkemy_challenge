@@ -1,0 +1,40 @@
+.container {
+    background-Color: transparent;
+    width: 100%;
+    height: fit-content;
+    padding: 0.5em;
+    /* border-radius: 20% */
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5em;
+
+}
+
+.contBtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: rgb(71, 202, 130);
+    color: white;
+    border-radius: 16px;
+    margin: auto auto;
+}
+
+
+.boton_add {
+    background-Color: rgb(71, 202, 130);
+    color: white;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    margin: auto auto;
+    border: solid 3px white;
+    border-radius: 16px;
+    /* font-size: calc(1vw + .5em); */
+}
+
+
+.boton_add h2 {
+    font-size: calc(1vw + .5em);
+}
