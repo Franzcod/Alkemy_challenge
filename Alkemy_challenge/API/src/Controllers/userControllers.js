@@ -35,17 +35,13 @@ async function registerUser(req, res){
           password: encryptedPassword,
         });
 
-        const payload =  newUser['dataValues']
+        // console.log(newUser.id)
         
     
         // Create token
-        const token = jwt.sign(
-          payload,
-          process.env.TOKEN_KEY,
-          {
-            expiresIn: "2h",
-          }
-        );
+        const token = await generarJWT(newUser.id);
+
+        // console.log('token register >>', token);
         // save user token
         newUser.token = token;
     
@@ -79,15 +75,10 @@ async function loginUser(req, res){
     if (user && (await bcrypt.compare(password, user.password))) {
       // Create token
       console.log('user created >>', user['dataValues']);
-      const payload =  user['dataValues']
+      const payload =  user.id
 
-      const token = jwt.sign(
-        payload,
-        process.env.TOKEN_KEY,
-        {
-          expiresIn: "2h",
-        }
-      );
+      const token = generarJWT(payload);
+      // console.log('token login >>', token);
 
       // save user token
       user.token = token;
@@ -109,16 +100,16 @@ async function loginUser(req, res){
 
 const renewToken = async (req, res = response) => {
 
-  const user = req.user;
-  console.log('user en renew >>', user);
+  const uid = req.uid;
+  // console.log('user en renew >>', uid);
 
 
   // Generar un nuevo token
-  const token = await generarJWT(user);
+  const token = await generarJWT(uid.uid);
 
   // console.log('token >>', token);
   // Obtener el usuario para obtener los datos
-  const usuario = await User.findOne({where: {email: user.email}});
+  const usuario = await User.findOne({where: {id: uid.uid}});
 
 
   // res.json({
