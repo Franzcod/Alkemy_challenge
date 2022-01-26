@@ -10,7 +10,7 @@ import Swal from 'sweetalert2/src/sweetalert2.js'
 
 const HomePage =  () => {
 
-    const {Data, getData} = useContext(DataContext);
+    const {Data, getData, filterData} = useContext(DataContext);
     const {Auth} = useContext(AuthContext);
 
     const Toast = Swal.mixin({
@@ -36,12 +36,12 @@ const HomePage =  () => {
                       <option value="pasivo">Pasivo</option>
                     </select>
                     <select id="category" class="swal2-input">
+                    <option value="Varios">Varios</option>
                       <option value="Auto">Auto</option>
                       <option value="Novia">Novia</option>
                       <option value="Trabajo">Trabajo</option>
                       <option value="Regalos">Regalos</option>
                       <option value="Pc">Pc</option>
-                      <option value="Varios">Varios</option>
                     </select>`,
             confirmButtonText: 'Save',
             focusConfirm: false,
@@ -67,6 +67,10 @@ const HomePage =  () => {
             `.trim())
           })
     }
+
+    let datos = Data.data
+
+  
       
 
     useEffect(() => {
@@ -79,13 +83,19 @@ const HomePage =  () => {
     }, [Auth]);
 
 
-    let datos = Data.data
+    
 
     return (
         <div className={style.container}>
             <Header/>
             <div onClick={agregar}>
                 <Boton_add  />
+            </div>
+            <div className={style.filtersCont}>
+              <h5>Filters:</h5>
+              <button onClick={()=>{filterData(Auth["user"].id,'activo')}} >Income</button>
+              <button onClick={()=>{filterData(Auth["user"].id,'pasivo')}} >Expenses</button>
+              <button onClick={()=>{filterData(Auth["user"].id,'all')}} >All</button>
             </div>
             <div className={style.contBoxs}>
                 

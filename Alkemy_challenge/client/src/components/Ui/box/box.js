@@ -43,22 +43,28 @@ const Box = ({data}) => {
     const update = () => {
         Swal.fire({
             title: 'Update',
-            html: `<input type="text" id="concept" class="swal2-input" placeholder="Concept" value="${data.concept}">
-                    <input type="text" id="amount" class="swal2-input" placeholder="Amount" value="${data.amount}">
-                    <input type="text" id="type" class="swal2-input" placeholder="Type" value="${data.type}">
-                    <input type="text" id="category" class="swal2-input" placeholder="Category" value="${data.category}">`,
+            html: `<input type="text" id="concept" class="swal2-input" placeholder="Concept" value=${data.concept}>
+                  <input type="text" id="amount" class="swal2-input" placeholder="Amount"  value=${data.amount}>
+                  
+                  <select id="category" class="swal2-input">
+                  <option  value=${data.category}>${data.category}</option>
+                    <option value="Auto">Auto</option>
+                    <option value="Novia">Novia</option>
+                    <option value="Trabajo">Trabajo</option>
+                    <option value="Regalos">Regalos</option>
+                    <option value="Pc">Pc</option>
+                  </select>`,
             confirmButtonText: 'Save',
             focusConfirm: false,
             preConfirm: () => {
               const concept = Swal.getPopup().querySelector('#concept').value
               const amount = Swal.getPopup().querySelector('#amount').value
-              const type = Swal.getPopup().querySelector('#type').value
               const category = Swal.getPopup().querySelector('#category').value
               const id = data.id
-              if (!concept || !amount || !type || !category) {
+              if (!concept || !amount  || !category) {
                 Swal.showValidationMessage(`Please complete all the fields`)
               }
-              return {id, concept, amount, type, category , userId: Auth.user.id}
+              return {id, concept, amount, type: data.type, category , userId: Auth.user.id}
             }
           }).then((res) => {
                 console.log(res.value)
@@ -115,8 +121,8 @@ const Box = ({data}) => {
             </div>
                 
             <div className={style.concepto_limite_cuota}>
-            <p>id: {numero}</p>
-                
+              <p>id: {numero}</p>
+              <p >Category: {data.category}</p> 
             </div>
 
         </div>

@@ -47,13 +47,48 @@ export const DataProvider = ({children}) => {
             console.log(error.message)
         }
     }
+
+    const filterData = async (userId,filter) => {
+      
+
+        if(filter === 'all') {
+            const resp = await fetchConToken('operations', {}, 'GET')
+            
+
+            if(resp) {
+                const newData = resp.filter(data => data.userId === userId)
+                
+                setData({
+                    data : newData
+                });
+                return Data
+            }
+            return [];
+        }
+        else {
+            const resp = await fetchConToken('operations', {}, 'GET')
+        
+
+            if(resp) {
+                const newData = resp.filter(data => data.userId === userId)
+                const newData2 = newData.filter(data => data.type === filter)
+                
+                setData({
+                    data : newData2
+                });
+                return Data
+            }
+            return [];
+        }
+    }
     
 
     return (
         <DataContext.Provider value={{
             Data,
             getData,
-            deleteForId
+            deleteForId,
+            filterData
         }}>
             {children}
         </DataContext.Provider>
