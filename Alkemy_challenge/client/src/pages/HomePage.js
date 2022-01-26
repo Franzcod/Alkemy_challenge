@@ -31,8 +31,18 @@ const HomePage =  () => {
             title: 'Add',
             html: `<input type="text" id="concept" class="swal2-input" placeholder="Concept">
                     <input type="text" id="amount" class="swal2-input" placeholder="Amount">
-                    <input type="text" id="type" class="swal2-input" placeholder="Type">
-                    <input type="text" id="category" class="swal2-input" placeholder="Category">`,
+                    <select id="type" class="swal2-input">
+                      <option value="activo">Activo</option>
+                      <option value="pasivo">Pasivo</option>
+                    </select>
+                    <select id="category" class="swal2-input">
+                      <option value="Auto">Auto</option>
+                      <option value="Novia">Novia</option>
+                      <option value="Trabajo">Trabajo</option>
+                      <option value="Regalos">Regalos</option>
+                      <option value="Pc">Pc</option>
+                      <option value="Varios">Varios</option>
+                    </select>`,
             confirmButtonText: 'Save',
             focusConfirm: false,
             preConfirm: () => {
