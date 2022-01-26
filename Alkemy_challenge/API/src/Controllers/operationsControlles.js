@@ -51,13 +51,41 @@ async function postOperation(req,res) {
         res.send( {"Operation Saved": operationCreate.toJSON() } )
     } catch (error) {
         res.status(404).json('Error al guardar la operacion => ' + error.message)
-    }
+    } 
+}
 
-    
+async function deleteOperationsById(req,res) {
+
+    const { postId } = req.body;
+
+
+    try {
+        Operation.destroy({ where: { id: postId } });
+        let operations = await Operation.findAll()
+        res.send(operations)
+    } catch (error) {
+        res.status(404).json('Error al guardar la operacion => ' + error.message)
+    } 
+}
+
+async function updatePost(req,res) {
+
+    const {id, concept, amount, date, type, category , userId} = req.body;
+
+
+    try {
+        Operation.update({concept, amount, date, type, category},{ where: { id: id } });
+        let operations = await Operation.findAll()
+        res.send(operations)
+    } catch (error) {
+        res.status(404).json('Error al guardar la operacion => ' + error.message)
+    } 
 }
 
 module.exports = {
     getOperations,
     getOperationsById,
-    postOperation
+    postOperation,
+    deleteOperationsById,
+    updatePost
 }

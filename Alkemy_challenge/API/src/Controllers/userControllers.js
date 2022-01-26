@@ -81,7 +81,7 @@ async function loginUser(req, res){
       // console.log('token login >>', token);
 
       // save user token
-      user.token = token;
+      // user.token = token;
 
       // user
       res.status(200).send({

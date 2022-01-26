@@ -27,12 +27,33 @@ export const DataProvider = ({children}) => {
         }
         return [];
     }
+
+    const deleteForId = async (userId, postId) => {
+        try {
+            const resp = await fetchConToken('operations', {postId}, 'DELETE')
+            // console.log('<<resp=>> ',resp)
+
+            if(resp) {
+            
+                const newData = resp.filter(data => data.userId === userId)
+                
+                setData({
+                    data : newData
+                });
+                return Data
+            }
+            return [];
+        } catch (error) {
+            console.log(error.message)
+        }
+    }
     
 
     return (
         <DataContext.Provider value={{
             Data,
-            getData
+            getData,
+            deleteForId
         }}>
             {children}
         </DataContext.Provider>
